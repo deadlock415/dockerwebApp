@@ -1,0 +1,56 @@
+ <style>
+body {
+  background-image: url('https://i2.wp.com/background4free.com/download/blue_aqua_white_1897054974.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+h1 {
+  font-weight: bold;
+  
+  font-size:50px;
+  text-shadow: 2px 2px 5px red;
+  
+}
+div {
+  background: rgba(0, 0, 128, 0.1);
+}
+</style>  
+
+
+
+<body>
+<center>
+<h1>Docker Web App</h1>
+[root@localhost ~]#<input id = "input" size="50"/> 
+<button id="b" type="button" onclick="lw()"> RUN </button>
+<br/><br/><br/>
+<button id="button1" onclick="button(command='docker images');"> DOCKER IMAGES</button>
+<button id="button2" onclick="button(command='docker ps -a');"> DOCKER CONTAINERS</button>
+<button id="button3" onclick="button(command='docker --version');"> DOCKER VERSION</button>
+<button id="button4" onclick="button(command='docker');"> DOCKER HELP</button>
+<button id="button5" onclick="button(command='docker ps');"> DOCKER RUNNING CONTAINER</button>
+
+<pre>
+<h2><div id= "d1">Output</div></h2>
+</pre>
+</center>
+<script>
+function lw() {
+var i = document.getElementById("input").value;
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://192.168.100.122/cgi-bin/arpit.py?q=" + i, false);
+xhr.send();  
+var output = xhr.responseText;
+document.getElementById("d1").innerHTML = output;
+}
+function button(command) {
+var i =command ;
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://192.168.100.122/cgi-bin/arpit.py?q=" + i, false);
+xhr.send();  
+var output = xhr.responseText;
+document.getElementById("d1").innerHTML = output;
+}
+</script>
+</body>
