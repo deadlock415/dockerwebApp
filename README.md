@@ -6,7 +6,7 @@
 
 ## Step 1 :
 ### Installation
-- yum install -y httpd docker
+> yum install -y httpd docker
 
 ## Step 2 :
 ### Copy folder into /var/www/
